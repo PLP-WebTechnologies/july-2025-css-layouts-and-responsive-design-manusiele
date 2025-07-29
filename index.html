@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Layout with Flexbox & Grid</title>
+  <style>
+    /* Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem;
+    }
+
+    header h1 {
+      margin-bottom: 0.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    main {
+      background: #f4f4f4;
+      padding: 1rem;
+    }
+
+    aside {
+      background: #e2e2e2;
+      padding: 1rem;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      flex: 1 1 30%;
+      background: #ddd;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+
+    /* Tablet view */
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        flex: 1 1 45%;
+      }
+    }
+
+    /* Mobile view */
+    @media (max-width: 480px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Responsive Layout</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="grid-container">
+    <main>
+      <section class="intro">
+        <h2>Welcome</h2>
+        <p>This responsive web page is built using CSS Grid and Flexbox. Resize the browser to see it adapt to different screen sizes.</p>
+      </section>
+
+      <section class="cards">
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+      </section>
+    </main>
+
+    <aside>
+      <h3>Sidebar</h3>
+      <p>This is some additional sidebar content.</p>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Responsive Design Demo</p>
+  </footer>
+
+</body>
+</html>
